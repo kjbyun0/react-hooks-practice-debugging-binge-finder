@@ -1,7 +1,8 @@
 import React from "react";
 
 function Episode(props) {
-  let { myEpisode } = props;
+  let { eachEpisode:myEpisode } = props;
+  // console.log('in Episode, myEpisode: ', myEpisode);
 
   return (
     <div>

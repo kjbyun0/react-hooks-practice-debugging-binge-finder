@@ -25,6 +25,8 @@ function App() {
   }
 
   function handleFilter(e) {
+    // console.log('in App-handleFilter, e.target.value: ', e.target.value);
+
     e.target.value === "No Filter"
       ? setFilterByRating("")
       : setFilterByRating(e.target.value);
@@ -39,10 +41,11 @@ function App() {
 
   let displayShows = shows;
   if (filterByRating) {
-    displayShows = displayShows.filter((s) => {
-      s.rating.average >= filterByRating;
-    });
+    displayShows = displayShows.filter((s) => 
+      s.rating.average >= parseInt(filterByRating));
   }
+
+  console.log('in App, displayShows: ', displayShows);
 
   return (
     <div>
